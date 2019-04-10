@@ -1,0 +1,9 @@
+<div class="right" *ngIf="movies">
+  <ul>
+    <li *ngFor="let movie of movies | async; let i = index">
+      <span>{{movie.name}}</span> has rating of <span>{{movie.rating}}</span>&nbsp;
+      <a href="javascript:void(0);" (click)="deleteMovie(i)">Remove</a>
+    </li>
+  </ul>
+</div>
+<div [hidden]="movies" #nomovies>No movies to list!</div>
